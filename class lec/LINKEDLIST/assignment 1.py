@@ -23,3 +23,14 @@ class Node:
 class SLL:
     def _init_(self):
         self.head=None
+
+        
+# Append
+    def append(self, new_node):
+        if self.head==None:
+            self.head=new_node
+        else:
+            temp=self.head
+            while temp.next:
+                temp=temp.next
+            temp.next=new_node
