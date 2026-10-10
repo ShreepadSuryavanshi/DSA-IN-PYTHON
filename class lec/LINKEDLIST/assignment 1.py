@@ -85,3 +85,19 @@ class SLL:
             fast=fast.next.next
 
         print("Middle node: ",slow.data)
+
+
+
+
+    # Delete a node
+    def delete(self,value):
+        temp=self.head
+
+        if temp==None:
+            print("List is empty")
+            return
+
+# delete first node if value matches
+        if temp.data==value:
+            self.head=self.head.next
+            return
