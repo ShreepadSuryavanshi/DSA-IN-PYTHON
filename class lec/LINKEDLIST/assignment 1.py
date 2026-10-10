@@ -70,3 +70,18 @@ class SLL:
 
         new_node.next=temp.next
         temp.next=new_node
+
+
+#Find and print middle node
+    def middle(self):
+        if self.head==None:
+            print("List is Empty!")
+            return
+
+        slow=self.head  # it moves one step
+        fast=self.head  # it moves two steps
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+
+        print("Middle node: ",slow.data)
