@@ -101,3 +101,64 @@ class SLL:
         if temp.data==value:
             self.head=self.head.next
             return
+
+prev=temp
+        temp=temp.next
+
+        # Search a node to delete
+        while temp!=None and temp.data!=value:
+            prev=temp
+            temp=temp.next
+
+        if temp == None:
+            print("Value is not present in the list!")
+            return
+
+        #skip the node being delete
+        prev.next=temp.next
+
+    # Reverse
+    def reverse(self):
+        prev=None
+        temp=self.head
+
+        while temp!=None:
+            next_node=temp.next
+            temp.next=prev
+            prev=temp
+            temp=next_node
+
+        self.head=prev
+
+    # Sum of two every 2 consecutive node values
+    def consecutive_sum(self):
+        if self.head==None or self.head.next==None:
+            print("At least two nodes are required!")
+            return
+
+        temp=self.head
+        while temp!=None and temp.next!=None:
+            total=temp.data+temp.next.data
+            print(temp.data," + ",temp.next.data," = ",total)
+            temp=temp.next
+
+l = SLL()
+l.append(Node(10))
+l.append(Node(20))
+l.append(Node(30))
+l.append(Node(40))
+l.append(Node(50))
+print("Original Linked List:")
+l.print()
+print("After inserting 25 at poition 3:")
+l.insert(Node(25),3)
+l.print()
+l.middle()
+print("After deleting 30:")
+l.delete(30)
+l.print()
+print("Reversed Linked List:")
+l.reverse()
+l.print()
+print("Two consecutive node sums:")
+l.consecutive_sum()
