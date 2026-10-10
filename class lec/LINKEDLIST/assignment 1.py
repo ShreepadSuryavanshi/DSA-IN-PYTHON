@@ -58,3 +58,9 @@ class SLL:
         temp=self.head
         p=1
 
+#Reach node before required position
+        while temp!=None and p<pos-1:
+            temp=temp.next
+            p+=1
+
+        
