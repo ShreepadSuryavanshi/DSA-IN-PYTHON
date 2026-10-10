@@ -63,4 +63,10 @@ class SLL:
             temp=temp.next
             p+=1
 
-        
+#Check whether the position is valid 
+        if temp==None:
+            print("Invalid Position!")
+            return
+
+        new_node.next=temp.next
+        temp.next=new_node
