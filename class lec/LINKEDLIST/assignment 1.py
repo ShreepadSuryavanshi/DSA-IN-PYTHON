@@ -24,7 +24,7 @@ class SLL:
     def _init_(self):
         self.head=None
 
-        
+
 # Append
     def append(self, new_node):
         if self.head==None:
@@ -34,3 +34,27 @@ class SLL:
             while temp.next:
                 temp=temp.next
             temp.next=new_node
+
+
+#Traverse
+    def print(self):
+        temp=self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp=temp.next
+
+        print()
+
+    #Insert at specific position
+    def insert(self, new_node, pos):
+        if pos<1:
+            print("Invalid position!")
+            return
+        if pos==1:
+            new_node.next=self.head
+            self.head=new_node
+            return
+        
+        temp=self.head
+        p=1
+
